@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
+import "./styles/style.css";
 
 import Home from './Home';
+import Hobbies from './Hobbies';
+import Education from './Education';
 import Contact from './Contact';
 import About from './About';
 
@@ -17,16 +20,15 @@ export default class NavbarComp extends Component {
             <Router>
                 <div>
 
-                    <Navbar bg="dark" variant={"dark"} expand="lg">
-                        <Navbar.Brand href="#">Navbar Demo Arjun Codes</Navbar.Brand>
+                    <Navbar variant="dark" expand="lg" className="pt-0 pb-0">
+                        <Navbar.Brand as={Link} to="/Home" className="name ps-lg-4 ps-1 fs-5 fw-bold text-dark">Asali Tharaka</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
-                        <Navbar.Collapse id="navbarScroll">
+                        <Navbar.Collapse id="navbarScroll" className="justify-content-center">
                             <Nav
-                                className="mr-auto my-2 my-lg-0"
-                                style={{ maxHeight: '100px' }}
-                                navbarScroll
+                                className="mr-auto my-2 my-lg-0 fs-6 fw-bolder"
                             >
-                                <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                                <Nav.Link as={Link} to="/hobbies">Hobbies</Nav.Link>
+                                <Nav.Link as={Link} to="/education">Education</Nav.Link>
                                 <Nav.Link as={Link} to="/about">About</Nav.Link>
                                 <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
 
@@ -37,6 +39,12 @@ export default class NavbarComp extends Component {
                 </div>
                 <div>
                     <Switch>
+                         <Route path="/hobbies">
+                            <Hobbies />
+                        </Route>
+                         <Route path="/education">
+                            <Education />
+                        </Route>
                         <Route path="/about">
                             <About />
                         </Route>
