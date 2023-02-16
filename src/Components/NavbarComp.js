@@ -23,7 +23,7 @@ export default class NavbarComp extends Component {
                     <Navbar variant="dark" expand="lg" className="pt-0 pb-0">
                         <Navbar.Brand as={Link} to="/Home" className="name ps-lg-4 ps-1 fs-5 fw-bold text-dark">Asali Tharaka</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
-                        <Navbar.Collapse id="navbarScroll" className="justify-content-center">
+                        <Navbar.Collapse id="navbarScroll" className="justify-content-center text-center">
                             <Nav
                                 className="mr-auto my-2 my-lg-0 fs-6 fw-bolder"
                             >
